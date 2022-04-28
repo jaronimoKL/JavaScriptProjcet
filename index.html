@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <!-- <input type="text" name="inp" id="inp"> -->
+
+
+    <!-- <button onclick="showBirthday()" id="birth">Тык</button> -->
+
+    <script>
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return '';
+        }
+        // 1.1
+        // var json = '["Коля", "Вася", "Петя"]';
+        // json = JSON.parse(json);
+        // alert(json);
+        // 1.2
+        // var obj = { a: 'aaa', b: 'bbb' };
+        // var json = JSON.stringify(obj);
+        // alert(json);
+        // 2.1
+        // document.cookie = 'name=Иван';
+        // alert(document.cookie);
+        // 2.2
+        // document.cookie = 'name=Александр';
+        // document.cookie = 'age=19';
+        // alert(document.cookie);
+        // 2.3
+        // function cooockieee() {
+        //     let cities = document.getElementById('inp').value
+        //     document.cookie = "city=" + cities;
+        //     alert(document.cookie);
+        // }
+    </script>
+    <input type="date" name="test" id="test">
+    <button onclick="getCookie()" id="but">Тык</button>
+    <div id="date">
+
+    </div>
+    <script>
+        // 2.4
+        // $(document).ready(function () {
+        //     function showBirthday() {
+        //         var arr = birthday.split('-');
+        //         var today = new Date();
+        //         var dateBirtday = new Date();
+        //         dateBirtday.setDate(arr[2]);
+        //         dateBirtday.setMonth(Number(arr[1]) - 1);
+        //         dateBirtday.setHours(0);
+        //         dateBirtday.setMinutes(0);
+        //         dateBirtday.setSeconds(0);
+        //         if (dateBirtday - today < 0) dateBirtday.setFullYear(today.getFullYear() + 1);
+        //         today = Math.floor((dateBirtday - today) / 1000);
+        //         var tsec = today % 60; today = Math.floor(today / 60); if (tsec < 10) tsec = '0' + tsec;
+        //         var tmin = today % 60; today = Math.floor(today / 60); if (tmin <script 10) tmin = '0' + tmin;
+        //         var thour = today % 24; today = Math.floor(today / 24);
+        //         var timestr = today + " дней " + thour + " часов " + tmin + " минут " + tsec + " секунд";
+        //         $('#date').html(timestr);
+        //         window.setTimeout(showBirthday, 1000);
+        //     }
+
+        //     $('button').click(function () {
+        //         document.cookie = "birthday=" + $('#test').val();
+        //     });
+
+        //     var birthday = getCookie("birthday");
+        //     if (birthday) showBirthday(birthday);
+        // });
+    </script>
+    <!-- 2.5 -->
+    <input type="text" name="inp" id="inp1">
+    <input type="text" name="inp" id="inp2">
+    <input type="text" name="inp" id="inp3">
+    <script>
+        var inp1 = document.querySelector('#inp1');
+        var inp2 = document.querySelector('#inp2');
+        var inp3 = document.querySelector('#inp3');
+        inp1.addEventListener('blur', () => {
+            document.cookie = 'inp1=' + inp1.value;
+        });
+        inp2.addEventListener('blur', () => {
+            document.cookie = 'inp2=' + inp2.value;
+        });
+        inp3.addEventListener('blur', () => {
+            document.cookie = 'inp3=' + inp3.value;
+        });
+        window.addEventListener('load', function () {
+            inp41.value = getCookie('inp1');
+            inp42.value = getCookie('inp2');
+            inp43.value = getCookie('inp3');
+        });
+        console.log(getCookie('inp1'));
+    </script>
+    <!-- 2.6 -->
+    <input type="checkbox" name="ck1" id="ck1">
+    <input type="checkbox" name="ck2" id="ck2">
+    <input type="checkbox" name="ck3" id="ck3">
+    <input type="checkbox" name="ck4" id="ck4">
+    <input type="checkbox" name="ck5" id="ck5">
+    <script>
+        
+    </script>
+</body>
+
+</html>
